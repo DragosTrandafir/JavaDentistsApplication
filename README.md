@@ -1,5 +1,6 @@
 # JavaDentistsApplication
 Handles a Java application and works with multiple types of files and databases, also offering a JavaFX interface.
+This projects has parts implemented during facultiy laboratories, but also parts that I studied independently from the curriculum.
 
 ----Java solution for managing the appointments to a dentist. The program allows CRUD operations for dentists, adding a new appointment, cancelling an appointment, creating different reports, etc.
 IN ORDER TO RUN THE APPLICATION, you have 2 options:
