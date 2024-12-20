@@ -19,6 +19,11 @@ OTHER DETAILS:
 - There are custom Validator classes to validate inputs. Validator objects are provided to my service(s).
 - There are provided different reports
 
+  
+![Assignment2](https://github.com/user-attachments/assets/e29d642a-69a7-4c95-9605-95c6414f4ec3)
+![Diagram](https://github.com/user-attachments/assets/6567ef50-1441-4ea1-a408-c41452d5222c)
+![Undo](https://github.com/user-attachments/assets/30d37702-336e-4202-b164-29b12085838a)
+
 
 
 
