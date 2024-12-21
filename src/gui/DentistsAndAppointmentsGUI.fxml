@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="839.0" prefWidth="1007.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView fx:id="listViewAppointments" layoutX="33.0" layoutY="30.0" prefHeight="244.0" prefWidth="287.0" />
+      <ListView fx:id="listViewDentistAssignments" layoutX="329.0" layoutY="29.0" prefHeight="244.0" prefWidth="287.0" />
+      <ListView fx:id="listViewDentists" layoutX="630.0" layoutY="30.0" prefHeight="244.0" prefWidth="287.0" />
+      <TextField fx:id="textFieldAppointmentId" layoutX="51.0" layoutY="293.0" prefHeight="26.0" prefWidth="269.0" />
+      <Label fx:id="labelAppointmentId" layoutX="33.0" layoutY="293.0" prefHeight="26.0" prefWidth="31.0" text="Id:" />
+      <TextField fx:id="textFieldAppointmentPatientName" layoutX="115.0" layoutY="326.0" prefHeight="26.0" prefWidth="206.0" />
+      <TextField fx:id="textFieldAppointmentDoctorName" layoutX="115.0" layoutY="357.0" prefHeight="26.0" prefWidth="206.0" />
+      <TextField fx:id="textFieldAppointmentHour" layoutX="73.0" layoutY="389.0" prefHeight="26.0" prefWidth="248.0" />
+      <TextField fx:id="textFieldAppointmentDate" layoutX="73.0" layoutY="421.0" prefHeight="26.0" prefWidth="248.0" />
+      <Label fx:id="labelAppointmentPatientName" layoutX="33.0" layoutY="330.0" prefHeight="18.0" prefWidth="78.0" text="Patient Name:" />
+      <Label fx:id="labelAppointmentDoctorName" layoutX="34.0" layoutY="361.0" prefHeight="18.0" prefWidth="78.0" text="Doctor Name:" />
+      <Label fx:id="labelAppointmentHour" layoutX="35.0" layoutY="389.0" prefHeight="26.0" prefWidth="31.0" text="Hour:" />
+      <Label fx:id="labelAppointmentDate" layoutX="33.0" layoutY="421.0" prefHeight="26.0" prefWidth="31.0" text="Date:" />
+      <GridPane fx:id="gridAppointmentsAddRemoveModifyFindById" layoutX="33.0" layoutY="455.0" prefHeight="98.0" prefWidth="287.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.79998779296875" minWidth="10.0" prefWidth="151.8" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="135.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="buttonAddAppointment" cache="true" mnemonicParsing="false" onAction="#buttonAddAppointmentHandler" prefHeight="36.0" prefWidth="134.0" text="Add appointment" textFill="#10a32b" />
+            <Button fx:id="buttonRemoveAppointment" cache="true" mnemonicParsing="false" onAction="#buttonRemoveAppointmentHandler" prefHeight="36.0" prefWidth="134.0" text="Remove appointment" textFill="#e12810" GridPane.columnIndex="1" />
+            <Button fx:id="buttonModifyAppointment" cache="true" mnemonicParsing="false" onAction="#buttonModifyAppointmentHandler" prefHeight="36.0" prefWidth="134.0" text="Modify appointment" textFill="#1040cf" GridPane.rowIndex="1" />
+            <Button fx:id="buttonFindByIdAppointment" cache="true" mnemonicParsing="false" onAction="#buttonFindByIdAppointmentHandler" prefHeight="36.0" prefWidth="134.0" text="Find appointment by id" textFill="#e710bc" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Button fx:id="buttonGetIdAppointmentsOfDoctorName" cache="true" layoutX="33.0" layoutY="553.0" mnemonicParsing="false" onAction="#buttonGetIdsAppointmentsOfDoctorNameHandler" prefHeight="36.0" prefWidth="287.0" text="Get ids of appointments of doctor name" textFill="#c7760c" />
+      <Button fx:id="buttonGetNameDoctorWithMostAppointments" cache="true" layoutX="33.0" layoutY="596.0" mnemonicParsing="false" onAction="#buttonGetNameDoctorWithMostAppointmentsHandler" prefHeight="36.0" prefWidth="287.0" text="Get name of doctor with the most appointments" textFill="#c7760c" />
+      <Label fx:id="labelAppointmentsTitle" layoutX="34.0" layoutY="14.0" prefHeight="18.0" prefWidth="120.0" text="APPOINTMENTS" />
+      <Label fx:id="labelDentistsTitle" layoutX="632.0" layoutY="15.0" prefHeight="18.0" prefWidth="59.0" text="DENTISTS" />
+      <TextField fx:id="textFieldDentistId" layoutX="647.0" layoutY="293.0" prefHeight="26.0" prefWidth="269.0" />
+      <Label fx:id="labelDentistId" layoutX="629.0" layoutY="293.0" prefHeight="26.0" prefWidth="31.0" text="Id:" />
+      <TextField fx:id="textFieldDentistName" layoutX="669.0" layoutY="335.0" prefHeight="26.0" prefWidth="248.0" />
+      <TextField fx:id="textFieldDentistAge" layoutX="655.0" layoutY="376.0" prefHeight="26.0" prefWidth="262.0" />
+      <Label fx:id="labelDentistName" layoutX="629.0" layoutY="339.0" prefHeight="18.0" prefWidth="78.0" text="Name:" />
+      <Label fx:id="labelDentistAge" layoutX="629.0" layoutY="380.0" prefHeight="18.0" prefWidth="78.0" text="Age:" />
+      <GridPane fx:id="gridDentistsAddRemoveModifyFindById" layoutX="630.0" layoutY="415.0" prefHeight="79.0" prefWidth="287.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.79998779296875" minWidth="10.0" prefWidth="151.8" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="135.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="buttonAddDentist" cache="true" mnemonicParsing="false" onAction="#buttonAddDentistHandler" prefHeight="36.0" prefWidth="134.0" text="Add dentist" textFill="#10a32b" />
+            <Button fx:id="buttonRemoveDentist" cache="true" mnemonicParsing="false" onAction="#buttonRemoveDentistHandler" prefHeight="36.0" prefWidth="134.0" text="Remove dentist" textFill="#e12810" GridPane.columnIndex="1" />
+            <Button fx:id="buttonModifyDentist" cache="true" mnemonicParsing="false" onAction="#buttonModifyDentistHandler" prefHeight="36.0" prefWidth="134.0" text="Modify dentist" textFill="#1040cf" GridPane.rowIndex="1" />
+            <Button fx:id="buttonFindByIdDentist" cache="true" mnemonicParsing="false" onAction="#buttonFindByIdDentistHandler" prefHeight="36.0" prefWidth="134.0" text="Find dentist by id" textFill="#e710bc" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <TextField fx:id="textFieldDentistAssignmentIdOfDentistAssignment" layoutX="410.0" layoutY="293.0" prefHeight="26.0" prefWidth="206.0" />
+      <Label fx:id="labelDentistAssignmentIdOfDentistAssignment" layoutX="330.0" layoutY="293.0" prefHeight="26.0" prefWidth="92.0" text="Assignment Id:" />
+      <TextField fx:id="textFieldDentistAssignmentIdOfAppointment" layoutX="419.0" layoutY="335.0" prefHeight="26.0" prefWidth="198.0" />
+      <TextField fx:id="textFieldDentistAssignmentIdOfDentist" layoutX="385.0" layoutY="376.0" prefHeight="26.0" prefWidth="231.0" />
+      <TextField fx:id="textFieldDentistAssignmentConsultationCost" layoutX="427.0" layoutY="421.0" prefHeight="26.0" prefWidth="187.0" />
+      <Label fx:id="labelDentistAssignmentIdOfAppointment" layoutX="328.0" layoutY="339.0" prefHeight="18.0" prefWidth="92.0" text="Appointment id:" />
+      <Label fx:id="labelDentistAssignmentIdOfDentist" layoutX="328.0" layoutY="380.0" prefHeight="18.0" prefWidth="78.0" text="Dentist id:" />
+      <Label fx:id="labelDentistAssignmentConsultationCost" layoutX="330.0" layoutY="421.0" prefHeight="26.0" prefWidth="100.0" text="Consultation cost:" />
+      <Label fx:id="labelDentistAssignmentsTitle" layoutX="330.0" layoutY="15.0" text="DENTIST ASSIGNMENTS" />
+      <GridPane fx:id="gridDentistAssignmentsAddRemoveModifyFindById" layoutX="329.0" layoutY="455.0" prefHeight="79.0" prefWidth="287.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.79998779296875" minWidth="10.0" prefWidth="151.8" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="135.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="buttonAddDentistAssignment" cache="true" mnemonicParsing="false" onAction="#buttonAddDentistAssignmentHandler" prefHeight="36.0" prefWidth="134.0" text="Add assignment" textFill="#10a32b" />
+            <Button fx:id="buttonRemoveDentistAssignment" cache="true" mnemonicParsing="false" onAction="#buttonRemoveDentistAssignmentHandler" prefHeight="36.0" prefWidth="134.0" text="Remove assignment" textFill="#e12810" GridPane.columnIndex="1" />
+            <Button fx:id="buttonModifyDentistAssignment" cache="true" mnemonicParsing="false" onAction="#buttonModifyDentistAssignmentHandler" prefHeight="36.0" prefWidth="134.0" text="Modify assignment" textFill="#1040cf" GridPane.rowIndex="1" />
+            <Button fx:id="buttonFindByIdDentistAssignment" cache="true" mnemonicParsing="false" onAction="#buttonFindByIdDentistAssignmentHandler" prefHeight="36.0" prefWidth="134.0" text="Find assignment by id" textFill="#e710bc" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Line fx:id="lineSeparateDentistAssignmentsUpFromReports" endX="179.20001220703125" endY="0.20001220703125" layoutX="439.0" layoutY="537.0" startX="-107.79998779296875" startY="0.20001220703125" />
+      <Line fx:id="lineSeparateAppointmentsFromReports" endX="-101.0" endY="198.20001220703125" layoutX="431.0" layoutY="577.0" startX="-101.0" startY="-38.60003662109375" />
+      <Line fx:id="lineSeparateDentistAssignmentsLeftFromReports" endX="-100.29998779296875" endY="50.70001220703125" layoutX="719.0" layoutY="487.0" startX="-100.29998779296875" startY="10.9071044921875" />
+      <Line fx:id="lineSeparateDentistsUpFromReports" endX="199.20001220703125" endY="-2.800018310546875" layoutX="717.0" layoutY="500.0" startX="-97.79998779296875" startY="-2.5928955078125" />
+      <Button fx:id="buttonGetAppointmentsByDentistId" layoutX="638.0" layoutY="715.0" mnemonicParsing="false" onAction="#buttonGetAppointmentsByDentistIdHandler" prefHeight="26.0" prefWidth="278.0" text="Get appointments by dentist id" textFill="#1b7b62" />
+      <Button fx:id="buttonGetAllDentistsByAppointmentPatientNameSortedByAgeAscendingAndNameDescending" layoutX="342.0" layoutY="741.0" mnemonicParsing="false" onAction="#buttonGetAllDentistsByAppointmentPatientNameSortedByAgeAscendingAndNameDescendingHandler" prefHeight="26.0" prefWidth="574.0" text="Get all dentists by appointment patient name sorted by age ascending and name descending" textFill="#ff7a06">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonGetDentistsHavingAppointmentAtHourSortedByName" layoutX="342.0" layoutY="715.0" mnemonicParsing="false" onAction="#buttonGetDentistsHavingAppointmentAtHourSortedByNameHandler" prefHeight="26.0" prefWidth="298.0" text="Get dentists having appointment at hour sorted by name" textFill="#ff7a06">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <ListView fx:id="listViewAppointmentsSpecialOptions" layoutX="33.0" layoutY="637.0" prefHeight="113.0" prefWidth="287.0" />
+      <Button fx:id="buttonGetDentistIdsWithAppointmentsAtCertainDate" layoutX="342.0" layoutY="689.0" mnemonicParsing="false" onAction="#buttonGetDentistIdsWithAppointmentsAtCertainDateHandler" prefHeight="26.0" prefWidth="255.0" text="Get dentist ids with appointments at certain date" textFill="#ff7a06">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonGetAppointmentsStartingAtHourAndAtCertainDate" layoutX="598.0" layoutY="689.0" mnemonicParsing="false" onAction="#buttonGetAppointmentsStartingAtHourAndAtCertainDateHandler" prefHeight="26.0" prefWidth="319.0" text="Get appointments starting at hour and at certain date" textFill="#1b7b62" />
+      <Label fx:id="labelReportsTitle" layoutX="646.0" layoutY="509.0" prefHeight="27.0" prefWidth="270.0" text="                                      REPORTS" textFill="#433030">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ListView fx:id="listViewAppointmentsReports" layoutX="630.0" layoutY="553.0" prefHeight="130.0" prefWidth="287.0" />
+      <ListView fx:id="listViewDentistsReports" layoutX="342.0" layoutY="553.0" prefHeight="130.0" prefWidth="278.0" />
+      <Label fx:id="labelAppointmentsReportsTitle" layoutX="631.0" layoutY="535.0" prefHeight="18.0" prefWidth="120.0" text="APPOINTMENTS" />
+      <Label fx:id="labelDentistsReportsTitle" layoutX="344.0" layoutY="535.0" prefHeight="18.0" prefWidth="59.0" text="DENTISTS" />
+      <Button fx:id="buttonUndo" layoutX="35.0" layoutY="754.0" mnemonicParsing="false" onAction="#buttonUndoHandler" text="Undo" />
+      <Button fx:id="buttonRedo" layoutX="93.0" layoutY="754.0" mnemonicParsing="false" onAction="#buttonRedoHandler" text="Redo" />
+   </children>
+</AnchorPane>
