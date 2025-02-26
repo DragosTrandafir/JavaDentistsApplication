@@ -6,7 +6,8 @@ This projects has parts implemented during facultiy laboratories, but also parts
 IN ORDER TO RUN THE APPLICATION, you have 2 options:
 1. run D:\MAP\a5-2024-DragosTrandafir\src\gui\DentistsAndAppointmentsGUI.java -> JavaFXML user interface
 2. run D:\MAP\a5-2024-DragosTrandafir\src\main\Main.java                      -> console interface
-Be careful to have all the drivers from the lib directory.
+
+Be careful to have all the drivers and libraries from the lib directory.
 
 
 OTHER DETAILS:
